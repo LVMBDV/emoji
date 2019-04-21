@@ -3021,6 +3021,8 @@ else
 	exit 1
 fi
 
-if [ ${#choice[@]} = 2 ]; then
+echo "${#choice[@]}"
+if [ ${#choice[@]} -gt 1 ]; then
+	echo "${choice[0]}"
 	xdotool type "${choice[0]}"
 fi
