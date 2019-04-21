@@ -1570,7 +1570,14 @@ emoji_data="\
 ㊗️ congratulations
 ㊙️ secret"
 
-read -r -a choice <<< $(rofi -dmenu -monitor -2 -p 'emoji' <<< "$emoji_data")
+if hash rofi 2> /dev/null; then
+	read -r -a choice <<< $(rofi -dmenu -monitor -2 -p "emoji" <<< "$emoji_data")
+elif hash dmenu 2> /dev/null; then
+	read -r -a choice <<< $(dmenu <<< "$emoji_data")
+else
+	echo "Could not find rofi or dmenu. Please install either one to use this script." 1>&2
+	exit 1
+fi
 
 if [ ${#choice[@]} = 2 ]; then
 	xdotool type "${choice[0]}"
