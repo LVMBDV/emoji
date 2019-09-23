@@ -9,7 +9,7 @@ I use i3 and I bound it to `<super>+z`. I suggest you do something similar.
 
 ## Dependencies
 
-- [rofi](https://github.com/DaveDavenport/rofi/)
+- [rofi](https://github.com/DaveDavenport/rofi/) or [dmenu](https://tools.suckless.org/dmenu/)
 - [xdotool](https://www.semicomplete.com/projects/xdotool/)
 
 ## Installation
